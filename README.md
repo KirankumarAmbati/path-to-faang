@@ -1,2 +1,3 @@
-# path-to-faang
-My Journal
+# Path To FAANG
+
+Journal of my Journey:
