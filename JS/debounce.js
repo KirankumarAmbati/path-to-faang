@@ -7,7 +7,7 @@ function debouncify(fn, delay) {
             clearTimeout(timerId);
         }
         timerId = setTimeout(() => {
-            fn(...args)
+            fn.apply(this, args)
         }, delay);
     }
 }
@@ -17,8 +17,8 @@ function print(name) {
     console.log("Hello, " +name);
 }
 
-const debouncedFunction = debouncify(print, 3000);
+const debouncedPrint = debouncify(print, 3000);
 
-debouncedFunction('Test');
-debouncedFunction('Test');
-debouncedFunction('Test');
+debouncedPrint('Test');
+debouncedPrint('Test');
+debouncedPrint('Test');
