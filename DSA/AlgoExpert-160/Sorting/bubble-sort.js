@@ -11,9 +11,7 @@ function bubbleSort(array) {
 
         for (let i = 0; i < array.length; i++) {
             if(array[i] > array[i+1]) {
-                let temp = array[i];
-                array[i] = array[i+1];
-                array[i+1] = temp;
+                swap(array, i, i+1);
 
                 swapped = true;
             }
@@ -21,4 +19,10 @@ function bubbleSort(array) {
     }
 
     return array;
+}
+
+function swap(array, i, j) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
 }
