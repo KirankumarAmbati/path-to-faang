@@ -25,12 +25,12 @@
 
 // ### Inferences:
 
-// - Non-empty Array
-// - Distinct integers
-// - Target found: return array of those numbers
-// - Target not found: []
-// - Atmost one matching pair only
-// - Can not add single integer twice
+// * Non-empty Array
+// * Distinct integers
+// * Target found: return array of those numbers
+// * Target not found: []
+// * Atmost one matching pair only
+// * Can not add single integer twice
 
 
 // ##### Brute force #####
