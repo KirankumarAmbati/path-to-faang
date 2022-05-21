@@ -1,3 +1,5 @@
 # Path To FAANG
 
-Journal of my Journey:
+### Resources:
+
+* https://www.techinterviewhandbook.org/
