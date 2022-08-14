@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tabs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="tabs"></div>
+    <script src="./index.js"></script>
+    <!-- <script src="./data.js"></script> -->
+    <script>
+        const data = [{
+            title: 'HTML',
+            content: 'HyperText Markup Language'
+        }, {
+            title: 'CSS',
+            content: 'Cascading Stylesheets'
+        }, {
+            title: 'JS',
+            content: 'JavaScript'
+        }];
+        new Tabs('#tabs', data)
+    </script>
+</body>
+</html>

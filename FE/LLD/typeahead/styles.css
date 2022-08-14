@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.typeahead-container {
+    margin: 40px 0;
+}
+
+.input-field {
+    width: 200px;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.suggestions-container {
+    /* border: 1px solid; */
+    margin: 10px 0;
+}
+
+.suggestions-container li{
+    list-style-type: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+    cursor: pointer;
+}

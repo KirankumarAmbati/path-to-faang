@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <div id="modal"></div> -->
+
+    <h1 id="title">Modal example</h1>
+    <button class="trigger" id="trigger">Trigger</button>
+        <div class="modal" id="modal">
+            <div class="modal-content" id="modal-content">
+                <p>Some text in the Modal</p>
+              </div>
+        </div>
+    <script>
+        const trigger = document.getElementById('trigger');
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Trigger: ', { e });
+            modal.style.display = "block";
+        });
+        modalContent.addEventListener('click', function(e) {
+            e.preventDefault();
+        })
+        window.addEventListener('click', () => {
+            console.log('Body');
+            // modal.style.display = "none";
+        })
+    </script>
+</body>
+</html>

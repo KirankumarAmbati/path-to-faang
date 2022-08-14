@@ -1,0 +1,10 @@
+.progress-bar {
+    height: 50px;
+    width: 300px;
+    border: 1px solid black;
+}
+
+.run-button {
+    margin: 0 20px;
+    vertical-align: center;
+}

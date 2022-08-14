@@ -1,0 +1,10 @@
+.tab-container {
+    display: flex;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+}

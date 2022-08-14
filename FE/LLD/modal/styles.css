@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    background-color:rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin: auto;
+    border: 3px solid black;
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    height: 20%;
+}
