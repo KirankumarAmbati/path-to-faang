@@ -72,15 +72,50 @@ const data = [{
     manager: 'manager4'
 }];
 
+Array.prototype.groupBy = function(key) {
+    const self = this;
+
+    return self.reduce((acc, ele) => {
+        if(!acc[ele[key]]) acc[ele[key]] = [];
+        acc[ele[key]].push(ele);
+        return acc;
+    }, {});
+}
+
+console.log(data.groupBy('name'));
 console.log(data.groupBy('manager'));
+console.log(data.groupBy('location'));
 
 // new push 
-
 
 // For an array, create an event subscribing and publishing mechanism, where an event gets dispatched, when an item is added to an array.
 // For simplicity do not alter the push method, instead create a new pushWithEvent method.
 
-// const myArr = [];
-// myArr.addListener('add', (items) => {
-// })
-// myArr.pushWithEvent(1)
+Array.prototype.listeners = {}
+Array.prototype.addListener = function(event, cb) {
+    if(!this.listeners[event]) this.listeners[event] = [];
+    this.listeners[event].push(cb);
+}
+
+Array.prototype.pushWithEvent = function(...items) {
+    this.push(...items);
+    this.listeners['pushWithEvent'].forEach(cb => {
+        cb.apply(this, items);
+    });
+}
+
+const myArr = [];
+console.log({ myArr });
+
+myArr.addListener('pushWithEvent', (...items) => {
+    console.log({ items });
+})
+
+myArr.pushWithEvent(1, 3);
+console.log({ myArr });
+
+myArr.pushWithEvent(5, 6);
+console.log({ myArr });
+
+myArr.pushWithEvent(8);
+console.log({ myArr });
