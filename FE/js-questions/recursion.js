@@ -8,11 +8,57 @@
 
 // Challenge 1: Implement flat() function using recursion
 
+Array.prototype.myFlat = function(depth = Infinity) {
+    const self = this;
+
+    function flat(arr, depth) {
+        return Array.isArray(arr) && depth > 0
+            ? [].concat(...arr.map(e => flat(e, depth - 1)))
+            : arr;
+    }
+
+    return flat(self, depth);
+}
+
+console.log([1, 2, 3, 4].myFlat());
+console.log([1, 2, 3, [4, [5, [6]]]].myFlat());
+console.log([1, 2, [3, [4]]].myFlat(1));
+
 // Challenge 2: Implement getElementByClassName() function using recursion
+
+// -> Look for children => child.classList.includes(givenClass)
 
 // Challenge 3: Implement String.length function using recursion
 
+String.prototype.lengthPolyfill = function() {
+    const self = this;
+
+    function getLength(str) {
+        if(str === '') return 0;
+        return 1 + getLength(str.slice(1));
+    }
+
+    return getLength(self);
+}
+
+console.log('hello.'.length);
+console.log('hello.'.lengthPolyfill());
+
 // Challenge 4: Implement Array.fill() function using recursion
+
+Array.prototype.myFill = function(val) {
+    const self = this;
+
+    function fill(arr, val) {
+        if(arr.length === 0) return [];
+
+        return ['*', ...fill(arr.slice(1), val)];
+    }
+
+    return fill(self, val);
+}
+
+console.log(Array(5).myFill('*'));
 
 // 1. check whether a number is even or not
 
